@@ -1,5 +1,5 @@
 import { Link } from "solid-meta";
-import Frantic from "./Frantic";
+import Frantic from "../Frantic";
 import "./Header.scss"
 
 export default function Header() {

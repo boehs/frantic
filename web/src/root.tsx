@@ -3,13 +3,13 @@ import { Links, Meta, Routes, Scripts } from "solid-start/root";
 import { ErrorBoundary } from "solid-start/error-boundary";
 import { createSignal, Show, Suspense } from "solid-js";
 import Popup from "~/components/Popup";
-import Header from "./components/Header";
+import Header from "~/components/Layout/Header";
 import "./root.css"
 import { TransitionGroup, animateEnter, animateExit } from "@otonashixav/solid-flip";
 
 export default function Root() {
   const franticString = <p>frantic is designed to protect and preserve things at risk, be that you, someone you care about, or important information. <strong>Using it for stalking, abuse, or harassment is despicable. You have been warned.</strong></p>
-  let [closed, setClosed] = createSignal(false)
+  let [closed, setClosed] = createSignal(true)
 
   return (
     <html lang="en">
@@ -27,7 +27,7 @@ export default function Root() {
               {
                 keyframes: [
                   {
-                    transform: "translateY(30px)",
+                    transform: "translateY(15px)",
                     composite: "add",
                     offset: 0,
                   },
@@ -47,12 +47,17 @@ export default function Root() {
                 {
                   keyframes: [
                     {
+                      transform: "translateY(-15px)",
+                      composite: "add",
+                      offset: 1,
+                    },
+                    {
                       opacity: 0,
                       offset: 1,
                     }
                   ],
                   options: {
-                    duration: 1000
+                    duration: 800
                   },
                 },
                 { absolute: true, reverseEnter: true }

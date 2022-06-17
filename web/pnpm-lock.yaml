@@ -4,6 +4,7 @@ specifiers:
   '@otonashixav/solid-flip': ^0.10.5
   sass: ^1.52.3
   solid-app-router: ^0.3.1
+  solid-heroicons: ^2.0.3
   solid-js: ^1.4.0
   solid-meta: ^0.27.3
   solid-start: next
@@ -15,6 +16,7 @@ specifiers:
 dependencies:
   '@otonashixav/solid-flip': 0.10.5_solid-js@1.4.4
   sass: 1.52.3
+  solid-heroicons: 2.0.3
 
 devDependencies:
   solid-app-router: 0.3.3_solid-js@1.4.4
@@ -2409,9 +2411,14 @@ packages:
       solid-js: 1.4.4
     dev: true
 
+  /solid-heroicons/2.0.3:
+    resolution: {integrity: sha512-sHlEaCaFFD8s/RDWTlmfIC/5dUPOtRB/UqOTpXQLq/BUZ94jWS58CANwONBclxwKFFGu6iasaP5zN4iYqORlVg==}
+    dependencies:
+      solid-js: 1.4.4
+    dev: false
+
   /solid-js/1.4.4:
     resolution: {integrity: sha512-nf/cbRzMuhb5UjbRDNfSJPqHKzUxNb9YgCQwijPUbdA3koQ/hWrz/lj0ter3lvThgxinvGPtXofDGy9bsKrXqA==}
-    dev: true
 
   /solid-meta/0.27.5_solid-js@1.4.4:
     resolution: {integrity: sha512-9OA50aNBhCwuFo1Uby9NT3gB6I6iBRN0mSXkXROJyWDtmyhdw9iyMT9JsnGF/A/7IQq2BSLV75oPQjNKQAMeQw==}
