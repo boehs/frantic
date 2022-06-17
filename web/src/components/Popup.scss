@@ -1,7 +1,7 @@
 .popup {
     box-sizing: border-box;
-    border-radius: 5px;
-    padding: 20px;
+    border-radius: var(--rad);
+    padding: var(--pri-pad);
     overflow: auto;
     
     input[type="submit"] {

@@ -1,7 +1,7 @@
 main {
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: var(--rad);
     background-color: rgb(230, 240, 245);
     overflow: auto;
-    padding: 20px;
+    padding: var(--pri-pad);
 }
