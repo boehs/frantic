@@ -20,6 +20,7 @@
     "node": ">=14"
   },
   "dependencies": {
+    "@otonashixav/solid-flip": "^0.10.5",
     "sass": "^1.52.3"
   }
 }

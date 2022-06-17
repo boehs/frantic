@@ -2,6 +2,8 @@ import "./index.css";
 
 export default function Home() {
   return (
-    <span></span>
+    <main>
+      <h1>Hello</h1>
+    </main>
   );
 }

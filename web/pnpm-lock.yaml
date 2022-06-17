@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@otonashixav/solid-flip': ^0.10.5
   sass: ^1.52.3
   solid-app-router: ^0.3.1
   solid-js: ^1.4.0
@@ -12,6 +13,7 @@ specifiers:
   vite: ^2.8.6
 
 dependencies:
+  '@otonashixav/solid-flip': 0.10.5_solid-js@1.4.4
   sass: 1.52.3
 
 devDependencies:
@@ -1275,6 +1277,14 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
+
+  /@otonashixav/solid-flip/0.10.5_solid-js@1.4.4:
+    resolution: {integrity: sha512-Tb2n9lzuktteqm26KJ1yH9NJsY2SbgNCHWnCOAKjEWBfGfw4j31vJVG1+k11WmgP2g9YzuyS8Skr7HsFntXZWA==}
+    peerDependencies:
+      solid-js: '>=1.0.0'
+    dependencies:
+      solid-js: 1.4.4
+    dev: false
 
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}

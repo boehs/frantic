@@ -1,14 +1,16 @@
 // @refresh reload
 import { Links, Meta, Routes, Scripts } from "solid-start/root";
 import { ErrorBoundary } from "solid-start/error-boundary";
-import { Suspense } from "solid-js";
+import { createSignal, Show, Suspense } from "solid-js";
 import Popup from "~/components/Popup";
 import Header from "./components/Header";
 import "./root.css"
+import { TransitionGroup, animateEnter, animateExit } from "@otonashixav/solid-flip";
 
 export default function Root() {
-  const franticString = <p>frantic is designed to protect and preserve things at risk, be that you, someone you care about, or important information. <strong>Using it for stalking, harassment, or any other unjustified actions that harm other people is despicable. You have been warned.</strong></p>
-  
+  const franticString = <p>frantic is designed to protect and preserve things at risk, be that you, someone you care about, or important information. <strong>Using it for stalking, abuse, or harassment is despicable. You have been warned.</strong></p>
+  let [closed, setClosed] = createSignal(false)
+
   return (
     <html lang="en">
       <head>
@@ -21,8 +23,48 @@ export default function Root() {
         <ErrorBoundary>
           <Suspense>
             <Header></Header>
-            <Popup text={franticString} color="rgb(243, 232, 150)" time={10}></Popup>
-            <Routes />
+            <div style={{ position: "relative" }}>
+              <TransitionGroup enter={animateEnter(
+                {
+                  keyframes: [
+                    {
+                      transform: "translateY(30px)",
+                      composite: "add",
+                      offset: 0,
+                    },
+                    {
+                      opacity: 0,
+                      offset: 0,
+                    },
+                  ],
+                  options: {
+                    duration: 1000,
+                    delay: 500
+                  },
+                },
+                { reverseExit: true, unabsolute: true }
+              )}
+                exit={animateExit(
+                  {
+                    keyframes: [
+                      {
+                        opacity: 0,
+                        offset: 1,
+                      }
+                    ],
+                    options: {
+                      duration: 1000
+                    },
+                  },
+                  { absolute: true, reverseEnter: true }
+                )}>
+                <Show when={closed() == true} fallback={
+                  <Popup setClosed={setClosed} text={franticString} color="rgb(243, 232, 150)" time={5}></Popup>
+                }>
+                  <Routes />
+                </Show>
+              </TransitionGroup>
+            </div>
           </Suspense>
         </ErrorBoundary>
         <Scripts />

@@ -3,4 +3,5 @@ main {
     border-radius: 5px;
     background-color: rgb(230, 240, 245);
     overflow: auto;
+    padding: 20px;
 }

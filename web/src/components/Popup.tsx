@@ -1,10 +1,11 @@
-import { createEffect, createSignal } from "solid-js"
+import { createEffect, createSignal, Setter } from "solid-js"
 import "./Popup.scss"
 
 export default function Popup(props: {
     color: string,
     time: number,
-    text: string | Element
+    text: string | Element,
+    setClosed: Setter<boolean>
 }) {
     const [time, setTime] = createSignal(props.time)
     const countDown = setInterval(() => setTime(time() - 1),1000)
@@ -16,7 +17,7 @@ export default function Popup(props: {
         <div class="popup" style={{"background-color": props.color}}>
             {props.text}
             <form method="dialog">
-                <input type="submit" disabled={time() != 0} 
+                <input type="submit" onClick={() => props.setClosed(true)} disabled={time() != 0} 
                 style={{"opacity": 1-(time()/props.time)}}
                 value={`I have read this message in it's entirety and I am not evil (${time()})`} />
             </form>
