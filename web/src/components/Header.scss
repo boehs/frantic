@@ -2,8 +2,12 @@ header {
     padding-bottom: 40px;
     gap: 10px;
     
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    
     h1 {
-        font-family: 'Amaranth', sans-serif;
         margin: 0;
     }
 }
