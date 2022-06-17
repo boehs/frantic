@@ -1,0 +1,6 @@
+main {
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: rgb(230, 240, 245);
+    overflow: auto;
+}

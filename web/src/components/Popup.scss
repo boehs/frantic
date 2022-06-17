@@ -1,0 +1,25 @@
+.popup {
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 20px;
+    overflow: auto;
+    
+    input[type="submit"] {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        backdrop-filter: brightness(85%);
+        transition: all 1s;
+        font-size: inherit;
+        
+        &:hover {
+            backdrop-filter: brightness(90%);
+            transform: translateY(-3px);
+        }
+        
+        &:active {
+            backdrop-filter: brightness(95%);
+        }
+    }
+}

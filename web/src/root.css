@@ -1,0 +1,5 @@
+body {
+    padding: 40px min(20%,400px);
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+}
