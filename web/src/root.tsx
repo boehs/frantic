@@ -23,48 +23,46 @@ export default function Root() {
         <ErrorBoundary>
           <Suspense>
             <Header></Header>
-            <div style={{ position: "relative" }}>
-              <TransitionGroup enter={animateEnter(
+            <TransitionGroup enter={animateEnter(
+              {
+                keyframes: [
+                  {
+                    transform: "translateY(30px)",
+                    composite: "add",
+                    offset: 0,
+                  },
+                  {
+                    opacity: 0,
+                    offset: 0,
+                  },
+                ],
+                options: {
+                  duration: 1000,
+                  delay: 500
+                },
+              },
+              { reverseExit: true, unabsolute: true }
+            )}
+              exit={animateExit(
                 {
                   keyframes: [
                     {
-                      transform: "translateY(30px)",
-                      composite: "add",
-                      offset: 0,
-                    },
-                    {
                       opacity: 0,
-                      offset: 0,
-                    },
+                      offset: 1,
+                    }
                   ],
                   options: {
-                    duration: 1000,
-                    delay: 500
+                    duration: 1000
                   },
                 },
-                { reverseExit: true, unabsolute: true }
-              )}
-                exit={animateExit(
-                  {
-                    keyframes: [
-                      {
-                        opacity: 0,
-                        offset: 1,
-                      }
-                    ],
-                    options: {
-                      duration: 1000
-                    },
-                  },
-                  { absolute: true, reverseEnter: true }
-                )}>
-                <Show when={closed() == true} fallback={
-                  <Popup setClosed={setClosed} text={franticString} color="rgb(243, 232, 150)" time={5}></Popup>
-                }>
-                  <Routes />
-                </Show>
-              </TransitionGroup>
-            </div>
+                { absolute: true, reverseEnter: true }
+              )}>
+              <Show when={closed() == true} fallback={
+                <Popup setClosed={setClosed} text={franticString} color="rgb(243, 232, 150)" time={5}></Popup>
+              }>
+                <Routes />
+              </Show>
+            </TransitionGroup>
           </Suspense>
         </ErrorBoundary>
         <Scripts />
