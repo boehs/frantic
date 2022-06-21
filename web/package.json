@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "@otonashixav/solid-flip": "^0.10.5",
+    "better-sqlite3": "^7.5.3",
+    "knex": "^2.1.0",
     "sass": "^1.52.3",
     "solid-heroicons": "^2.0.3"
   }
