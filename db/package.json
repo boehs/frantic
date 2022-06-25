@@ -1,0 +1,7 @@
+{
+  "name": "db",
+  "author": "Evan Boehs",
+  "dependencies": {
+    "knex": "^2.1.0"
+  }
+}

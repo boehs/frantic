@@ -5,12 +5,14 @@ dist
 .vercel
 .netlify
 netlify
+prod.sqlite3
+dev.sqlite3
 
 # dependencies
-/node_modules
+node_modules
 
 # IDEs and editors
-/.idea
+.idea
 .project
 .classpath
 *.launch
@@ -22,3 +24,5 @@ gitignore
 # System Files
 .DS_Store
 Thumbs.db
+
+.pnpm-debug.log

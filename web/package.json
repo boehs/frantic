@@ -6,6 +6,7 @@
     "start": "solid-start start"
   },
   "type": "module",
+  "author": "Evan Boehs",
   "devDependencies": {
     "solid-app-router": "^0.3.1",
     "solid-js": "^1.4.0",
