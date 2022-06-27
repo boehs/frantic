@@ -6,7 +6,7 @@ import "./index.css";
 export default function Home() {
   return (
     <main>
-      <CollectionProvider collection="E">
+      <CollectionProvider collection={false}>
         <div id="l">
           <h1>Hello</h1>
           <ListItem title="Bunch O' Grapes"></ListItem>

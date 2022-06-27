@@ -13,10 +13,3 @@ main {
     grid-area: l;
     padding: var(--pri-pad);
 }
-
-#r {
-    padding: var(--pri-pad);
-    grid-area: r;
-    color: rgb(230, 240, 245);
-    background-color: rgb(12, 12, 46);
-}

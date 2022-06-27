@@ -1,5 +1,5 @@
 import '~/components/Main/l/ListItem.scss'
-import { useCollection } from '../shared/collection'
+import { useCollection } from '~/components/Main/shared/collection'
 
 export interface ListItemProps {
     title: string

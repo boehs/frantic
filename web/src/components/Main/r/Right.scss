@@ -1,0 +1,13 @@
+#r {
+    padding: var(--pri-pad);
+    grid-area: r;
+    color: rgb(230, 240, 245);
+    background-color: rgb(12, 12, 46);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .light {
+        color: rgb(64 82 110);
+    }
+}
