@@ -9,6 +9,6 @@ export interface ListItemProps {
 export default function ListItem(props: ListItemProps) {
     const [_,{ setCollection }] = useCollection()
     return <li class="list-item" onClick={() => setCollection(props.title)}>
-       <button>{props.title}</button>
+       <a>{props.title}</a>
     </li>
 }

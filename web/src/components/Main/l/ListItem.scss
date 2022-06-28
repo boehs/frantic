@@ -7,17 +7,6 @@
     transition: 0.3s;
     cursor: pointer;
     
-    & > button {
-        cursor: pointer;
-        border: none;
-        background-color: inherit;
-        font-size: inherit;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        text-align: left;
-    }
-    
     &:hover {
         background-color: #91869d;
     }
