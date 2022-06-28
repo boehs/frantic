@@ -1,5 +1,6 @@
 import { createEffect, createSignal, Setter } from "solid-js"
 import "./Popup.scss"
+import "./Button.scss"
 
 export default function Popup(props: {
     color: string,

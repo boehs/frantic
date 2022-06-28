@@ -1,0 +1,18 @@
+input[type="submit"], button.but {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    backdrop-filter: brightness(85%);
+    transition: all 0.3s;
+    font-size: inherit;
+    
+    &:hover {
+        backdrop-filter: brightness(90%);
+        transform: translateY(-3px);
+    }
+    
+    &:active {
+        backdrop-filter: brightness(95%);
+    }
+}

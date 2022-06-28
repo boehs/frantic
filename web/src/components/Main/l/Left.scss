@@ -1,0 +1,10 @@
+#l {
+    grid-area: l;
+    padding: var(--pri-pad);
+    
+    .lToolbar {
+        display: flex;
+        justify-content: end;
+        gap: 10px
+    }
+}
