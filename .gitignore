@@ -5,7 +5,7 @@ dist
 .vercel
 .netlify
 netlify
-prod.sqlite3
+db.sqlite3
 dev.sqlite3
 
 # dependencies

@@ -1,13 +1,17 @@
-// Update with your config settings.
+import path from "path"
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-export default {
+const settings = {
   development: {
     client: "sqlite3",
     connection: {
-      filename: "./dev.sqlite3"
+      filename: path.join(__dirname, 'db.sqlite3')
     },
     migrations: {
       tableName: "knex_migrations",
@@ -18,7 +22,7 @@ export default {
   production: {
     client: "sqlite3",
     connection: {
-      filename: "./db.sqlite3"
+      filename: path.join(__dirname, 'db.sqlite3')
     },
     migrations: {
       tableName: "knex_migrations",
@@ -26,3 +30,5 @@ export default {
     useNullAsDefault: true
   }
 };
+
+export default settings
