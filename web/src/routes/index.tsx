@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "solid-start/error-boundary";
 import Left from "~/components/Main/l/Left";
 import Right from "~/components/Main/r/Right";
 import { CollectionProvider } from "~/components/Main/shared/collection";
@@ -7,8 +8,12 @@ export default function Home() {
   return (
     <main>
       <CollectionProvider collection={false}>
-        <Left/>
-        <Right/>
+        <ErrorBoundary>
+          <Left/>
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Right/>
+        </ErrorBoundary>
       </CollectionProvider>
     </main>
   );
