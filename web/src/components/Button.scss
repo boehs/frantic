@@ -4,16 +4,16 @@ input[type="submit"], .but {
     border: none;
     padding: 10px;
     border-radius: 5px;
-    backdrop-filter: brightness(85%);
+    backdrop-filter: brightness(85%) hue-rotate(var(--hue,0deg));
     transition: all 0.3s;
     font-size: inherit;
     
     &:hover {
-        backdrop-filter: brightness(90%);
+        backdrop-filter: brightness(90%) hue-rotate(var(--hue,0deg));
         transform: translateY(-3px);
     }
     
     &:active {
-        backdrop-filter: brightness(95%);
+        backdrop-filter: brightness(95%) hue-rotate(var(--hue,0deg));
     }
 }
