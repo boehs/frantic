@@ -33,7 +33,7 @@ export default function Home() {
                   {/* reduce animation clunk with wrapper div */}
                   <div>
                     <div class="lToolbar">
-                      <button class="but" onClick={() => setMode("main")}>❌</button>
+                      <button class="but" onClick={() => setMode("main")} style={{"--hue": "160deg"}}>❌ Close</button>
                     </div>
                     <form>
                       <select name="collector" id="collector">
@@ -41,7 +41,7 @@ export default function Home() {
                       </select>
                       <input type="text" name="name" autocomplete="off" autocapitalize="words" id="collectionName" placeholder="Name your new collection" />
                       <div class="lToolbar">
-                        <input type="submit" value="✅" onClick={() => setMode("main")} />
+                        <input type="submit" value="✅ Create!" onClick={() => setMode("main")} style={{"--hue": "290deg"}} />
                       </div>
                     </form>
                   </div>
@@ -51,7 +51,7 @@ export default function Home() {
                   <div>
                     <div class="lToolbar">
                       <button class="but">📁</button>
-                      <button class="but" onClick={() => setMode("create")}>➕</button>
+                      <button class="but" onClick={() => setMode("create")}>➕ New</button>
                     </div>
                     <Show when={data()}>
                       <For each={data()}>
