@@ -1,5 +1,7 @@
 #l {
     grid-area: l;
+    // animations are absolute
+    position: relative;
     padding: var(--pri-pad);
     
     .lToolbar {

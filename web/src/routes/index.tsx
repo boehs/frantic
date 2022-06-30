@@ -9,6 +9,8 @@ import { ErrorBoundary } from "solid-start/error-boundary";
 import { createServerResource } from 'solid-start/server'
 import { createSignal, For, Match, Show, Switch } from "solid-js";
 import knex from "../../../db/knex"
+import { TransitionGroup } from "@otonashixav/solid-flip";
+import { layoutAnimation } from "~/animations";
 
 export default function Home() {
   const data = createServerResource(async () => {
@@ -25,33 +27,41 @@ export default function Home() {
       <CollectionProvider collection={false}>
         <ErrorBoundary>
           <div id="l">
-            <Switch>
-              <Match when={mode() == "create"}>
-                <div class="lToolbar">
-                  <button class="but" onClick={() => setMode("main")}>❌</button>
-                </div>
-                <form>
-                  <select name="collector" id="collector">
-                    <option value="" disabled selected>Choose your collector</option>
-                  </select>
-                  <input type="text" name="name" autocomplete="off" autocapitalize="words" id="collectionName" placeholder="Name your new collection"/>
-                  <div class="lToolbar">
-                    <input type="submit" value="✅" onClick={() => setMode("main")}/>
+            <TransitionGroup enter={layoutAnimation.enter} exit={layoutAnimation.exit}>
+              <Switch>
+                <Match when={mode() == "create"}>
+                  {/* reduce animation clunk with wrapper div */}
+                  <div>
+                    <div class="lToolbar">
+                      <button class="but" onClick={() => setMode("main")}>❌</button>
+                    </div>
+                    <form>
+                      <select name="collector" id="collector">
+                        <option value="" disabled selected>Choose your collector</option>
+                      </select>
+                      <input type="text" name="name" autocomplete="off" autocapitalize="words" id="collectionName" placeholder="Name your new collection" />
+                      <div class="lToolbar">
+                        <input type="submit" value="✅" onClick={() => setMode("main")} />
+                      </div>
+                    </form>
                   </div>
-                </form>
-              </Match>
-              <Match when={mode() == "main"}>
-                <div class="lToolbar">
-                  <button class="but">📁</button>
-                  <button class="but" onClick={() => setMode("create")}>➕</button>
-                </div>
-                <Show when={data()}>
-                  <For each={data()}>
-                    {collection => <ListItem title={collection.name}></ListItem>}
-                  </For>
-                </Show>
-              </Match>
-            </Switch>
+                </Match>
+                <Match when={mode() == "main"}>
+                  {/* reduce animation clunk with wrapper div */}
+                  <div>
+                    <div class="lToolbar">
+                      <button class="but">📁</button>
+                      <button class="but" onClick={() => setMode("create")}>➕</button>
+                    </div>
+                    <Show when={data()}>
+                      <For each={data()}>
+                        {collection => <ListItem title={collection.name}></ListItem>}
+                      </For>
+                    </Show>
+                  </div>
+                </Match>
+              </Switch>
+            </TransitionGroup>
           </div>
         </ErrorBoundary>
         <ErrorBoundary>
