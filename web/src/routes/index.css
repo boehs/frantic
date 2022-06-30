@@ -2,9 +2,8 @@ main {
     box-sizing: border-box;
     border-radius: var(--rad);
     background-color: rgb(230, 240, 245);
-    overflow: auto;
+    overflow: hidden;
     display: grid;
-    
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "l r";
 }
