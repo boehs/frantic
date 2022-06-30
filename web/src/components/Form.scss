@@ -1,0 +1,14 @@
+form {
+    > *:not(input[type="submit"],.lToolbar) {
+        display: block;
+        width: 100%;
+        border: 2px solid #b3a7c0;
+        border-radius: var(--rad);
+        padding: 5px 10px;
+        margin-block: 10px;
+        transition: 0.3s;
+        font-size: inherit;
+        box-sizing: border-box;
+        background-color: field;
+    }
+}
