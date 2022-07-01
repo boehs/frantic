@@ -1,5 +1,5 @@
 // @refresh reload
-import { Links, Meta, Routes, Scripts } from "solid-start/root";
+import { Meta, Routes, Scripts } from "solid-start/root";
 import { ErrorBoundary } from "solid-start/error-boundary";
 import { createSignal, Show, Suspense } from "solid-js";
 import Popup from "~/components/Popup";
@@ -18,7 +18,6 @@ export default function Root() {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
-        <Links />
       </head>
       <body>
         <ErrorBoundary>
