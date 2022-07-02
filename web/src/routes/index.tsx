@@ -2,7 +2,6 @@ import "./index.css";
 import "~/components/Main/l/Left.scss"
 import "~/components/Button.scss"
 import "~/components/Form.scss"
-import Right from "~/components/Main/r/Right";
 import ListItem from "~/components/Main/l/ListItem";
 import { CollectionProvider } from "~/components/Main/shared/collection";
 import { ErrorBoundary } from "solid-start/error-boundary";
@@ -11,6 +10,7 @@ import { createSignal, For, Match, Show, Switch } from "solid-js";
 import knex from "../../../db/knex"
 import { TransitionGroup } from "@otonashixav/solid-flip";
 import { layoutAnimation } from "~/animations";
+import { Outlet } from "solid-app-router";
 
 export default function Home() {
   const data = createServerResource(async () => {
@@ -74,7 +74,7 @@ export default function Home() {
           </div>
         </ErrorBoundary>
         <ErrorBoundary>
-          <Right />
+          <Outlet/>
         </ErrorBoundary>
       </CollectionProvider>
     </main>
