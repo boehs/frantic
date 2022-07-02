@@ -4,11 +4,12 @@ import { useCollection } from '~/components/Main/shared/collection'
 export interface ListItemProps {
     title: string
     children?: ListItemProps[]
+    href: string
 }
 
 export default function ListItem(props: ListItemProps) {
     const [_,{ setCollection }] = useCollection()
     return <li class="list-item" onClick={() => setCollection(props.title)}>
-       <a>{props.title}</a>
+       <a href={props.href}>{props.title}</a>
     </li>
 }

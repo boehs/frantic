@@ -63,7 +63,7 @@ export default function Home() {
                     <ErrorBoundary>
                       <Show when={data()}>
                         <For each={data()}>
-                          {collection => <ListItem title={collection.name}></ListItem>}
+                          {collection => <ListItem title={collection.name} href={`/${collection.id}`}></ListItem>}
                         </For>
                       </Show>
                     </ErrorBoundary>
