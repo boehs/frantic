@@ -1,5 +1,3 @@
-import { Link } from "solid-app-router";
-
 export default function NotFound() {
   return (
     <main>
