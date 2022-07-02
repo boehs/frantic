@@ -6,7 +6,7 @@ import Right from "~/components/Main/r/Right";
 import ListItem from "~/components/Main/l/ListItem";
 import { CollectionProvider } from "~/components/Main/shared/collection";
 import { ErrorBoundary } from "solid-start/error-boundary";
-import { createServerResource } from 'solid-start/server'
+import { createServerAction, createServerResource, redirect } from 'solid-start/server'
 import { createSignal, For, Match, Show, Switch } from "solid-js";
 import knex from "../../../db/knex"
 import { TransitionGroup } from "@otonashixav/solid-flip";
@@ -22,6 +22,11 @@ export default function Home() {
   })
   const [mode, setMode] = createSignal<"main" | "create">("main")
 
+  const makeCollection = createServerAction(async (form: FormData) => {
+    const id = await knex('collection').insert({ name: form.get('name') })
+    throw redirect(`/${id[0]}`)
+  })
+
   return (
     <main>
       <CollectionProvider collection={false}>
@@ -36,7 +41,7 @@ export default function Home() {
                       <button class="but" onClick={() => setMode("main")} style={{ "--hue": "160deg" }}>❌ Close</button>
                     </div>
                     <ErrorBoundary>
-                      <form>
+                      <makeCollection.Form method="post">
                         <select name="collector" id="collector">
                           <option value="" disabled selected>Choose your collector</option>
                         </select>
@@ -44,7 +49,7 @@ export default function Home() {
                         <div class="lToolbar">
                           <input type="submit" value="✅ Create!" onClick={() => setMode("main")} style={{ "--hue": "290deg" }} />
                         </div>
-                      </form>
+                      </makeCollection.Form>
                     </ErrorBoundary>
                   </div>
                 </Match>
